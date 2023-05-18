@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+data = pd.read_csv("room_dataset.csv")
+print(data.head())
+plt.figure(figsize=(8, 6))
+sns.countplot(data=data, x='S6_PIR', hue='Room_Occupancy_Count', palette='Set3')
+plt.xlabel('Motion Detection (S6_PIR)')
+plt.ylabel('Count')
+plt.title('Motion Detection vs Occupancy Count (S6_PIR)')
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+print("5. Correlation between motion detection and occupancy count (S6_PIR) graph displayed.")
+plt.figure(figsize=(8, 6))
+sns.countplot(data=data, x='S7_PIR', hue='Room_Occupancy_Count', palette='Set3')
+plt.xlabel('Motion Detection (S7_PIR)')
+plt.ylabel('Count')
+plt.title('Motion Detection vs Occupancy Count (S7_PIR)')
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+print("5.Correlation between motion detection and occupancy count (S7_PIR) graph displayed.")
